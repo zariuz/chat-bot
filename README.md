@@ -2,8 +2,8 @@
 
 ### `env example`
 
-DATABASE_URL<b>
-TOKEN
+DATABASE_URL=postgresql://test:test@localhost:5432/test<br />
+TOKEN=your telegram token
 
 ### `npm start`
 
