@@ -14,8 +14,8 @@ model City {
   id        Int      @id @default(autoincrement())
   name      String
   createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  User      User[]
+  updatedAt DateTime @updatedAt
+  user      User[]
 }
 
 model Speciality {
@@ -23,8 +23,8 @@ model Speciality {
   title       String
   description String
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
-  User        User[]
+  updatedAt   DateTime @updatedAt
+  user        User[]
 }
 
 model User {
@@ -36,7 +36,7 @@ model User {
   cityId         Int
   specialityId   Int
   createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
   course         UserOnCourse[]
 }
 
@@ -47,7 +47,7 @@ model Course {
   dateStart   DateTime
   dateEnd     DateTime
   createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
   user        UserOnCourse[]
 }
 
@@ -57,7 +57,7 @@ model UserOnCourse {
   course    Course   @relation(fields: [courseId], references: [id])
   courseId  Int
   createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@id([userId, courseId])
 }
