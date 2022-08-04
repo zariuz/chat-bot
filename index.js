@@ -9,8 +9,14 @@ if (!token) {
 
 const bot = new Telegraf(token);
 
+bot.start((ctx) => ctx.reply('Привет!'));
+
+bot.command('user', (ctx) => {
+  ctx.reply(`name: ${ctx.from.username} id: ${ctx.from.id}`);
+});
+
 bot.on('text', (ctx) => {
-  ctx.reply('Привет!');
+  ctx.reply(ctx.message.text);
 });
 
 bot.launch();
