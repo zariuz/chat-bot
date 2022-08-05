@@ -1,9 +1,19 @@
 # Chat bot
 
-### `env example`
+### `How to install:`
 
-DATABASE_URL
-TOKEN
+git clone
+cd chat-bot
+npm install or npm ci
+npx prisma migrate dev
+npm run seed
+
+### `create .env file`
+
+.env example
+
+DATABASE_URL=postgresql://test:test@localhost:5432/test<br />
+TOKEN=your telegram token
 
 ### `npm start`
 
